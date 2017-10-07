@@ -1,5 +1,4 @@
 from pygame.sprite import Sprite
-from text_input import TextInput
 from colors import Colors
 from random import choice
 import pygame as pg
@@ -11,14 +10,12 @@ fireworks_colors = [colors.red, colors.magenta, colors.blue, colors.green, color
 fireworks_colors_secondary = [None, colors.red, colors.magenta, colors.blue, colors.green, colors.yellow]
 WIDTH = 1000
 HEIGHT = 800
-textInput = TextInput()
 screen = pg.display.set_mode([WIDTH, HEIGHT])
 pg.display.set_caption('Fireworks!')
 fireworks = []
 explosions = []
 clock = pg.time.Clock()
 flame_sizes = [2, 4, 6, 8, 10]
-font = pg.font.SysFont(None, 30)
 
 
 def render_choices():
