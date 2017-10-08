@@ -75,7 +75,9 @@ class Firework(Sprite):
     def draw(self):
         pg.draw.circle(screen, colors.orange, [self.x, self.y], choice(flame_sizes))
         pg.draw.rect(screen, colors.white, [self.x - 10, self.y, 20, -35])
-        pg.draw.rect(screen, self.color, [self.x - 5, self.y - 10, 10, -15])
+        pg.draw.rect(screen, self.color, [self.x - 10, self.y - 20, 20, -5])
+        if self.sec_color is not None:
+            pg.draw.rect(screen, self.sec_color, [self.x - 10, self.y - 10, 20, -5])
         pg.draw.polygon(screen, colors.brown,
                         [[self.x - 15, self.y - 35], [self.x, self.y - 50], [self.x + 15, self.y - 35]])
 
@@ -110,7 +112,8 @@ while True:
                 render_choices()
         elif event.type == pg.MOUSEBUTTONDOWN:
             if event.button == 1:
-                fireworks.append(Firework(50, len(fireworks), fireworks_colors[selection], fireworks_colors_secondary[selection_secondary]))
+                fireworks.append(Firework(50, len(fireworks), fireworks_colors[selection],
+                                          fireworks_colors_secondary[selection_secondary]))
             elif event.button == 4:
                 if selection == len(fireworks_colors) - 1:
                     selection = 0
