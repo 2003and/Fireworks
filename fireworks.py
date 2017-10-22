@@ -6,8 +6,8 @@ import pygame as pg
 colors = Colors()
 selection = 0
 selection_secondary = 0
-fireworks_colors = [colors.red, colors.magenta, colors.blue, colors.green, colors.yellow]
-fireworks_colors_secondary = [None, colors.red, colors.magenta, colors.blue, colors.green, colors.yellow]
+fireworks_colors = [colors.red, colors.magenta, colors.blue, colors.green, colors.yellow, colors.black, colors.white]
+fireworks_colors_secondary = [None, colors.red, colors.magenta, colors.blue, colors.green, colors.yellow, colors.black, colors.white]
 WIDTH = 1000
 HEIGHT = 800
 screen = pg.display.set_mode([WIDTH, HEIGHT])
