@@ -3,11 +3,14 @@ from colors import Colors
 from random import choice
 import pygame as pg
 
+pg.init()
+font = pg.font.SysFont("FreeSansBold.tff", 20)
 colors = Colors()
 selection = 0
 selection_secondary = 0
 fireworks_colors = [colors.red, colors.magenta, colors.blue, colors.green, colors.yellow, colors.black, colors.white]
-fireworks_colors_secondary = [None, colors.red, colors.magenta, colors.blue, colors.green, colors.yellow, colors.black, colors.white]
+fireworks_colors_secondary = [None, colors.red, colors.magenta, colors.blue, colors.green, colors.yellow, colors.black,
+                              colors.white]
 WIDTH = 1000
 HEIGHT = 800
 screen = pg.display.set_mode([WIDTH, HEIGHT])
@@ -16,6 +19,8 @@ fireworks = []
 explosions = []
 clock = pg.time.Clock()
 flame_sizes = [2, 4, 6, 8, 10]
+text = input('What will your greeting sound like?')
+text_pic = font.render(text, 20, colors.black)
 
 
 def render_choices():
@@ -93,6 +98,7 @@ class Firework(Sprite):
 
 
 while True:
+    screen.blit(text_pic, [len(text) // -2, HEIGHT // 2])
     for event in pg.event.get():
         if event.type == pg.QUIT:
             quit()
